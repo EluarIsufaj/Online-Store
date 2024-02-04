@@ -9,14 +9,15 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Role {
+public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String type;
+    private String authorName;
 
-    public Role(String type) {
-        this.type = type;
+
+    public Author(String authorName) {
+        this.authorName = authorName;
     }
 }

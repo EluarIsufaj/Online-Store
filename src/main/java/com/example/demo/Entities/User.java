@@ -1,11 +1,10 @@
 package com.example.demo.Entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.Set;
 
 @Data
 @Entity
@@ -21,8 +20,15 @@ public class User {
     private String City;
     private String address;
     private byte[] logo;
+    @ManyToOne
     private Role role;
 
-
-
+    public User(String email, String password, String city, String address, byte[] logo, Role role) {
+        this.email = email;
+        this.password = password;
+        City = city;
+        this.address = address;
+        this.logo = logo;
+        this.role = role;
+    }
 }
