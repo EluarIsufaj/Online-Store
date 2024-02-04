@@ -25,11 +25,11 @@ public class Order {
 
     private LocalDateTime dateOfSubmission;
 
-    private List<OrderLine> orderlines;
+    //private List<OrderLine> orderlines;
 
-    public Order(User user, String deliveryAddress, LocalDateTime dateOfSubmission, List<OrderLine> orderlines) {
+    public Order(User user, String deliveryAddress, LocalDateTime dateOfSubmission) {
         this.user = user;
         this.deliveryAddress = deliveryAddress;
         this.dateOfSubmission = dateOfSubmission;
-        this.orderlines = orderlines;
+       // this.orderlines = orderlines;
     }}
