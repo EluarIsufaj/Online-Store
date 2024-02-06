@@ -29,11 +29,8 @@ public class OrderTable {
 
     private LocalDateTime dateOfSubmission;
 
-    private List<OrderLine> orderlines = new ArrayList<>();
+    @OneToOne
+    @JoinColumn(name = "cart_id", referencedColumnName = "id", insertable = false, updatable = false)
+    private Cart cart;
 
-    public OrderTable(User user, String deliveryAddress, LocalDateTime dateOfSubmission) {
-        this.user = user;
-        this.deliveryAddress = deliveryAddress;
-        this.dateOfSubmission = dateOfSubmission;
-
-    }}
+  }
