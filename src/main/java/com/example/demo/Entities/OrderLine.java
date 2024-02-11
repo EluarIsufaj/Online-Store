@@ -1,9 +1,7 @@
 package com.example.demo.Entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.JavaType;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.Type;
@@ -13,6 +11,8 @@ import org.hibernate.type.SqlTypes;
 @Entity(name = "order_line_table")
 @Table(name = "order_line_table")
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
