@@ -16,18 +16,18 @@ public class ProductService {
     private ProductRepository repository;
 
 
-   public void saveProduct(Product product) throws ProductException {
-       String title = product.getTitle();
-       String AuthorName = product.getAuthor().getAuthorName();
-
-       Product product1 = repository.findByTitleAndAuthorName(title, AuthorName);
-
-       List<Product> products = new ArrayList<>();
-       if (product1 != null) {
-           products.add(product1);
-           throw new ProductException("Produkti egziston!");
-       }else repository.save(product);
-
-   }
+//   public void saveProduct(Product product) throws ProductException {
+//       String title = product.getTitle();
+//       String AuthorName = product.getAuthor().getAuthorName();
+//
+//       //Product product1 = repository.findByTitleAndAuthorName(title, AuthorName);
+//
+//       List<Product> products = new ArrayList<>();
+//       if (product1 != null) {
+//           products.add(product1);
+//           throw new ProductException("Produkti egziston!");
+//       }else repository.save(product);
+//
+//   }
 
 }

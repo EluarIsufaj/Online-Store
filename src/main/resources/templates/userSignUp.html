@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{../static/style.css}">
+
+    <title>Online-Store Sign Up</title>
+</head>
+<body>
+<h2 id="rgform">Registration Form</h2>
+<form action="#" th:action="@{/signup}" method="post" th:object="${user}">
+    <label>Full Name: <input type="text" th:field="*{fullname}" required></label><br><br>
+
+    <label>Username: <input type="text" th:field="*{username}" required></label><br><br>
+
+    <label>Email: <input type="email" th:field="*{email}" required></label><br><br>
+
+    <label>Password: <input type="password" th:field="*{password}" required></label><br><br>
+
+    <label>City: <input type="text" th:field="*{City}" required></label><br><br>
+
+    <label>Address: <input type="text" th:field="*{address}" required></label><br><br>
+
+    <label>Logo: <input type="text" th:field="*{logo}"></label><br><br>
+
+    <label>Role:
+        <select th:field="*{role}" required>
+            <option value="user">User</option>
+        </select>
+    </label><br><br>
+
+    <button type="submit">Register</button>
+</form>
+</body>
+</html>

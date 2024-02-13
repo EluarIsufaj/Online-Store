@@ -18,10 +18,10 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String AuthorName;
+    private String authorName;
 
 
     public Author(String authorName) {
-        this.AuthorName = authorName;
+        this.authorName = authorName;
     }
 }

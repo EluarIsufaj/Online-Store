@@ -18,21 +18,24 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    private String fullname;
+    private String username;
     private String email;
     private String password;
     private String City;
     private String address;
-    private byte[] logo;
-    @ManyToOne
-    private Role role;
+    private String logo;
 
-    public User(String email, String password, String city, String address, byte[] logo, Role role) {
+    private String role;
+
+    public User(String email, String password, String city, String address, String logo, String role, String fullname, String username) {
         this.email = email;
         this.password = password;
-        City = city;
+        this.City = city;
         this.address = address;
         this.logo = logo;
         this.role = role;
+        this.fullname = fullname;
+        this.username = username;
     }
 }
