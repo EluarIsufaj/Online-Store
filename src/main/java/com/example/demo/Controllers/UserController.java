@@ -3,7 +3,6 @@ package com.example.demo.Controllers;
 
 import com.example.demo.Entities.Product;
 import com.example.demo.Entities.User;
-import com.example.demo.Repositories.ProductRepository;
 import com.example.demo.Repositories.UserRepository;
 import com.example.demo.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +18,6 @@ public class UserController {
 
     @Autowired
     UserService userService;
-    @Autowired
-    ProductRepository productRepository;
 
 
 

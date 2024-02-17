@@ -16,6 +16,7 @@ public class UserService {
     UserRepository userRepository;
 
 
+
     public void addUser(User user) throws UserException {
         if(userRepository.findByEmail(user.getEmail()) != null || userRepository.findByUsername(user.getUsername()) != null){
             throw new UserException("The data provided already exists");
