@@ -1,16 +1,17 @@
 package com.example.demo.Controllers;
 
 
+import com.example.demo.Entities.Product;
 import com.example.demo.Entities.User;
+import com.example.demo.Repositories.ProductRepository;
 import com.example.demo.Repositories.UserRepository;
 import com.example.demo.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -18,6 +19,16 @@ public class UserController {
 
     @Autowired
     UserService userService;
+    @Autowired
+    ProductRepository productRepository;
+
+
+
+    @GetMapping("/mainpage")
+    public String showMainPage(Model model) {
+        return "MainPage";
+    }
+
 
     @GetMapping("/signup")
     public String showRegistrationForm(Model model) {

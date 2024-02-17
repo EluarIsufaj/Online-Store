@@ -4,39 +4,111 @@
     <title>Online-Store Sign Up</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" type="text/css" href="/static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link th:href="@{/static/css/style.css}" rel="stylesheet" />
 
 
 
-</head>
-<body>
-<h2 id="rgform">Registration Form</h2>
-<form action="#" th:action="@{/signup}" method="post" th:object="${user}">
-    <label>Full Name: <input type="text" th:field="*{fullname}" required></label><br><br>
 
-    <label>Username: <input type="text" th:field="*{username}" required></label><br><br>
+ </head>
 
-    <label>Email: <input type="email" th:field="*{email}" required></label><br><br>
+ <style>
 
-    <label>Password: <input type="password" th:field="*{password}" required></label><br><br>
+     #rgform {
+         max-width: 0 auto;
+         margin: 0 auto;
+         font-family: "Rubik", sans-serif;
+         text-align: center;
+         padding: 10px;
+     }
 
-    <label>City: <input type="text" th:field="*{city}" required></label><br><br>
+     form {
+         max-width: 400px;
+         margin: 0 auto;
+         padding: 20px;
+         border-radius: 10px;
+         background-color: #f9f9f9;
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+     }
 
-    <label>Address: <input type="text" th:field="*{address}" required></label><br><br>
 
-    <label>Logo: <input type="text" th:field="*{logo}"></label><br><br>
+     label {
+         display: block;
+         margin-bottom: -5px;
+         margin-top: -5px;
+         font-weight: bold;
+         color: #333;
+     }
 
-    <label>Role:
-        <select th:field="*{role}" required>
-            <option value="user">User</option>
-        </select>
-    </label><br><br>
 
-    <button type="submit">Register</button>
-</form>
-</body>
-</html>
+     input[type="text"],
+     input[type="email"],
+     input[type="password"],
+     select {
+         width: calc(100% - 22px);
+         padding: 10px;
+         margin-bottom: -1px;
+         margin-top: -1px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         box-sizing: border-box;
+         background-color: #fff;
+     }
+
+     input[type="text"]:focus,
+     input[type="email"]:focus,
+     input[type="password"]:focus,
+     select:focus {
+         border-color: #007bff;
+         box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+     }
+
+
+     button[type="submit"] {
+         width: 100%;
+         padding: 10px;
+         border: none;
+         border-radius: 5px;
+         background-color: #007bff;
+         color: #fff;
+         cursor: pointer;
+         transition: background-color 0.3s ease;
+     }
+
+     button[type="submit"]:hover {
+         background-color: #0056b3;
+     }
+
+
+     body {
+         background-color: #e9ecef;
+     }
+ </style>
+ <body>
+ <h2 id="rgform">Registration Form</h2>
+ <form action="#" th:action="@{/signup}" method="post" th:object="${user}">
+     <label>Full Name: <input type="text" th:field="*{fullname}" required></label><br><br>
+
+     <label>Username: <input type="text" th:field="*{username}" required></label><br><br>
+
+     <label>Email: <input type="email" th:field="*{email}" required></label><br><br>
+
+     <label>Password: <input type="password" th:field="*{password}" required></label><br><br>
+
+     <label>City: <input type="text" th:field="*{city}" required></label><br><br>
+
+     <label>Address: <input type="text" th:field="*{address}" required></label><br><br>
+
+     <label>Logo: <input type="text" th:field="*{logo}"></label><br><br>
+
+     <label>Role:
+         <select th:field="*{role}" required>
+             <option value="user">User</option>
+         </select>
+     </label><br><br>
+
+     <button type="submit">Register</button>
+ </form>
+ </body>
+ </html>
