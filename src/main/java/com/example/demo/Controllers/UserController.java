@@ -7,13 +7,15 @@ import com.example.demo.Repositories.ProductRepository;
 import com.example.demo.Repositories.UserRepository;
 import com.example.demo.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
+@RequestMapping("/api/users")
 public class UserController {
 
 
@@ -24,23 +26,14 @@ public class UserController {
 
 
 
-    @GetMapping("/mainpage")
-    public String showMainPage(Model model) {
-        return "MainPage";
-    }
+    @PostMapping("/create")
+    public ResponseEntity<String> createUser(@RequestBody User user) {
+        // Logic to process the received user entity
+        System.out.println("Received user: " + user.toString());
 
 
-    @GetMapping("/signup")
-    public String showRegistrationForm(Model model) {
-        model.addAttribute("user", new User());
-        return "userSignUp";
-    }
-
-
-    @PostMapping("/signup")
-    @ResponseBody
-    public String processRegistration(@ModelAttribute User user) {
         userService.addUser(user);
-        return "horayy, its done!!";
+
+        return ResponseEntity.ok("User created successfully");
     }
 }
