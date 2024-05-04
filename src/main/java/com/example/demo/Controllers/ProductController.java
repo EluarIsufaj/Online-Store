@@ -25,7 +25,7 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
-    @GetMapping("/products")
+    @GetMapping("/productsng")
     public List<Product> getPagedProducts( @RequestParam(defaultValue = "0") int pageNo, @RequestParam(defaultValue = "10") int pageSize) {
         return productService.getPagedProducts(pageNo, pageSize);
     }

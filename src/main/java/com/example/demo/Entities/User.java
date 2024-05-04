@@ -2,7 +2,9 @@ package com.example.demo.Entities;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
+
 
 import java.util.Set;
 
@@ -18,14 +20,21 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     private String fullname;
+    @NotNull
     private String username;
+    @NotNull
     private String email;
+    @NotNull
     private String password;
+    @NotNull
     private String City;
+    @NotNull
     private String address;
+    @NotNull
     private String logo;
-
+    @NotNull
     private String role;
 
     public User(String email, String password, String city, String address, String logo, String role, String fullname, String username) {
