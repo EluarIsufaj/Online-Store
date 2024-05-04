@@ -20,7 +20,7 @@ public class Product  {
 
     private String title;
     private String description;
-    private byte[] thumbnail;
+    private String thumbnail;
 
     @ManyToOne
     private Category category;
