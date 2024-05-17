@@ -5,10 +5,8 @@ import org.springframework.data.domain.Pageable;
 
 
 import com.example.demo.Entities.Product;
-import com.example.demo.Entities.User;
 import com.example.demo.Repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,6 +27,10 @@ public class ProductService {
         return listOfProducts;
     }
 
+
+    public void createProduct(Product product){
+        productRepository.save(product);
+    }
 
 
 }

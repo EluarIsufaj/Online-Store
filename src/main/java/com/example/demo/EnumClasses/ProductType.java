@@ -1,5 +1,8 @@
 package com.example.demo.EnumClasses;
 
+import lombok.Getter;
+
+@Getter
 public enum ProductType {
     LAPTOP("Laptop"),
     SMARTPHONE("Smartphone"),
@@ -22,7 +25,4 @@ public enum ProductType {
         this.displayName = displayName;
     }
 
-    public String getDisplayName() {
-        return displayName;
-    }
 }
